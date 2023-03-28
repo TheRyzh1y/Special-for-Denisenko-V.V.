@@ -1,0 +1,24 @@
+<head>
+<script>
+function fn()
+{
+mas=new Array (3,4,1,9,2,1,6,8,1) //Дан целочисленный массив. Найдите минимальный элемент массива 
+n=mas.length;                    //и его индекс. Если таких элементов несколько, найдите элемент
+min = mas[0];                   //с наибольшим индексом.
+
+t=-1;
+for (i = 1; i < n; ++i)
+{
+if (mas[i] < min) min = mas[i]; t=i;
+}
+alert('Массив: ' + mas)
+if (t>=0) alert ('Минимальное число в массиве: ' + min + ' Его индекс: ' + t);
+}
+
+</script>
+</head>
+<body>
+<input type='button' value='Нажать' onclick='fn()'>
+</body>
+
+</html>

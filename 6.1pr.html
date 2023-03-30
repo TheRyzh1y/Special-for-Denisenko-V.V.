@@ -1,0 +1,60 @@
+<html>
+<head>
+ <title>
+ </title>
+ <style>
+  body {
+   background-image: url('night.jpg');
+   font-family: Arial, sans-serif;
+   color: white;
+  }
+
+  h3 {
+   font-size: 28px;
+   font-weight: bold;
+   margin-top: 50px;
+  }
+
+  .error {
+   background-image: url('error.jpg');
+  }
+
+  .morning {
+   background-image: url('morning.jpg');
+  }
+
+  .day {
+   background-image: url('day.jpg');
+  }
+
+  .evening {
+   background-image: url('evening.jpg');
+  }
+ </style>
+</head>
+<body onload="showComment()">
+ <script>
+  function showComment() {
+   let hours = parseInt(prompt("Введите количество часов:"));
+
+   if (isNaN(hours)) {
+    document.body.className = "error";
+    document.getElementsByTagName("h3")[0].innerText = "Ошибка";
+   } else if (hours >= 0 && hours < 6) {
+    document.body.className = "night";
+    document.getElementsByTagName("h3")[0].innerText = "Ночь";
+   } else if (hours >= 6 && hours < 12) {
+    document.body.className = "morning";
+    document.getElementsByTagName("h3")[0].innerText = "Утро";
+   } else if (hours >= 12 && hours < 18) {
+    document.body.className = "day";
+    document.getElementsByTagName("h3")[0].innerText = "День";
+   } else if (hours >= 18 && hours < 24) {
+    document.body.className = "evening";
+    document.getElementsByTagName("h3")[0].innerText = "Вечер";
+   }
+   }
+ </script>
+ <h3></h3>
+</body>
+</html>

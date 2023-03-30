@@ -1,0 +1,76 @@
+<html>
+<head>
+ <style>
+  body {
+   background-color: #f2f2f2;
+  }
+  button {
+   padding: 10px;
+   font-size: 16px;
+   background-color: #4CAF50;
+   color: white;
+   border: none;
+   cursor: pointer;
+   border-radius: 5px;
+  }
+  button:hover {
+   background-color: #3e8e41;
+  }
+  h3 {
+   font-size: 24px;
+   color: white;
+   text-align: center;
+   margin-top: 50px;
+  }
+ </style>
+</head>
+<body>
+ <button id="startBtn">Start</button>
+ <button id="closeBtn">Close</button>
+
+ <script>
+  var startBtn = document.getElementById("startBtn");
+  var closeBtn = document.getElementById("closeBtn");
+
+  startBtn.onclick = function() {
+   var hours = prompt("Введите количество часов:");
+
+   if (hours !== null && hours !== "") {
+    var comment = "";
+    var background = "";
+    var fontSize = "";
+
+    if (hours >= 0 && hours < 6) {
+     comment = "Ночь";
+     background = "#1a1a1a";
+     fontSize = "32px";
+    } else if (hours >= 6 && hours < 12) {
+     comment = "Утро";
+     background = "#ffcc00";
+     fontSize = "28px";
+    } else if (hours >= 12 && hours < 18) {
+     comment = "День";
+     background = "#66ccff";
+     fontSize = "24px";
+    } else if (hours >= 18 && hours < 24) {
+     comment = "Вечер";
+     background = "#ff9900";
+     fontSize = "28px";
+    } else {
+     comment = "Ошибка";
+     background = "#ff0000";
+     fontSize = "32px";
+    }
+
+    var newWindow = window.open("", "", "width=200,height=200");
+    newWindow.document.body.style.backgroundColor = background;
+    newWindow.document.body.innerHTML = "<h3 style='font-size: " + fontSize + "'>" + comment + "</h3>";
+   }
+  };
+
+  closeBtn.onclick = function() {
+   window.close();
+  };
+ </script>
+</body>
+</html>

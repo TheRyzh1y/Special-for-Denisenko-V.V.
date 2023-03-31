@@ -1,0 +1,49 @@
+<html>
+<head>
+ <style>
+  .table-cell {
+   width: 33.33%;
+   text-align: center;
+   padding: 10px;
+   border: 1px solid black;
+  }
+  .animal-name {
+   display: none;
+  }
+ </style>
+</head>
+<body>
+ <table>
+  <tr>
+   <td class="table-cell">
+    <img src="gippopotam-1.gif" alt="Гиппопотам">
+    <p class="animal-name">Гиппопотам</p>
+   </td>
+   <td class="table-cell">
+    <img src="akula-1.gif" alt="Акула">
+    <p class="animal-name">Акула</p>
+   </td>
+   <td class="table-cell">
+    <img src="hobot1.gif" alt="Слон">
+    <p class="animal-name">Слон</p>
+   </td>
+  </tr>
+ </table>
+
+ <script>
+  let animalNames = document.querySelectorAll('.animal-name');
+
+  for (let i = 0; i < animalNames.length; i++) {
+   let animalImage = animalNames[i].previousElementSibling;
+
+   animalImage.addEventListener('mouseover', function() {
+    animalNames[i].style.display = 'block';
+   });
+
+   animalImage.addEventListener('mouseout', function() {
+    animalNames[i].style.display = 'none';
+   });
+  }
+ </script>
+</body>
+</html>

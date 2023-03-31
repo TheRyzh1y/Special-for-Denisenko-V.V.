@@ -1,0 +1,50 @@
+<html>
+<head>
+ <style>
+  .car-image {
+   width: 400px;
+   height: 300px;
+   object-fit: cover;
+  }
+ </style>
+</head>
+<body>
+ <img src="default-car.jpg" alt="Машина" class="car-image">
+ <br><br>
+ <button id="bmw">BMW</button>
+ <button id="audi">Audi</button>
+ <button id="mercedes">Mercedes-Benz</button>
+ <button id="volvo">Volvo</button>
+ <br><br>
+ <input type="text" id="price" placeholder="Стоимость машины">
+
+ <script>
+  let bmwButton = document.getElementById('bmw');
+  let audiButton = document.getElementById('audi');
+  let mercedesButton = document.getElementById('mercedes');
+  let volvoButton = document.getElementById('volvo');
+  let carImage = document.querySelector('.car-image');
+  let priceInput = document.getElementById('price');
+
+  bmwButton.addEventListener('click', function() {
+   carImage.src = 'bmw.jpg';
+   priceInput.value = '18000000 рублей';
+  });
+
+  audiButton.addEventListener('click', function() {
+   carImage.src = 'audi.jpg';
+   priceInput.value = '12500000 рублей';
+  });
+
+  mercedesButton.addEventListener('click', function() {
+   carImage.src = 'mercedes.jpg';
+   priceInput.value = '4000000 рублей';
+  });
+
+  volvoButton.addEventListener('click', function() {
+   carImage.src = 'volvo.jpg';
+   priceInput.value = '1000000 рублей';
+  });
+ </script>
+</body>
+</html>

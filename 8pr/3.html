@@ -1,0 +1,38 @@
+<html>
+<head>
+ <style>
+  h1 {
+   width: 60%;
+   border: 1px solid black;
+  }
+ </style>
+</head>
+<body>
+ <label for="text">Введите текст:</label>
+ <input type="text" id="text" onkeydown="addWord(event)">
+
+ <p id="words"></p>
+
+ <script>
+  var words = [];
+
+  function addWord(event) {
+   if (event.keyCode === 13) {
+    var text = document.getElementById("text").value;
+    words.push(text);
+    document.getElementById("words").innerHTML = words.join(", ");
+    document.getElementById("text").value = "";
+   }
+  }
+
+  function addText() {
+   var text = document.getElementById("text").value;
+   var headings = document.getElementsByTagName("h1");
+   for (var i = 0; i < headings.length; i++) {
+    headings[i].insertAdjacentHTML("beforebegin", text);
+   }
+   document.getElementById("text").value = "";
+  }
+ </script>
+</body>
+</html>
